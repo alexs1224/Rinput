@@ -1,0 +1,188 @@
+<html>
+<div id = 'browser' class = 'header'>
+  <div class = 'tab'>
+  </div>
+    <div class = 'tab1'>  
+    </div>
+      <button id = 'tc' >x</button>
+        <button id = 'close' >x</button>
+           <input id = 'addtab' type = 'button' value = '+'></input>
+            <div class = 'middle'>
+            </div>
+<p id = 'text'>Try to close me :)</p>
+</div>
+
+<div class = 'desktop'>
+</div>
+
+<div id = 'task'>
+  <div class = 'search'>
+  </div>
+  <div class = 'icon'>
+  </div>
+  
+</div>
+
+</html>
+<style>
+.header{
+  height: 50px;
+  width: 100%;
+  background: #CDA398;
+  position: absolute; 
+  top: 0;
+}
+
+#text{
+  position: absolute;
+  top: 200px;
+  left: 600px;
+}
+
+.button{
+  display: in-line-block;
+  border: none;
+  
+}
+
+#close{
+  height: 35px;
+  width: 56px;
+  background: #CDA398;
+  border: none;
+  font-family: arial;
+  font-size: 30px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#close:hover{
+  background: red;
+  color: white;
+}
+
+.tab{
+  height: 75px;
+  width: 100%;
+  background: #EFCAC3;
+  position: absolute;
+  top: 45px;
+  
+}
+
+.tab1{
+  height: 55px;
+  width: 288px;
+  border-radius: 12px;
+  background: #EFCAC3;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+#tc{
+  height: 20px;
+  width: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #EFCAC3;
+  font-family: arial;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 17px;
+  position: absolute;
+  left: 275px;
+  top: 12px; 
+}
+#tc:hover{
+  background: #CEAFAA;
+} 
+
+
+#addtab{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #CDA398;
+  font-family: arial;
+  font-size: 25px;
+  font-weight: 50px;
+  text-align: center;
+  position: absolute;
+  left: 320px;
+  top: 10px;  
+}
+#addtab:hover{
+  background: #B18E86;
+}
+
+
+
+.middle{
+  height: 1000px;
+  width: 100%;
+  background: white;
+  position: relative;
+  top: 120px;
+  
+}
+
+.desktop{
+  height: 1000px;
+  width: 100%;
+  background: #CEEFE4;
+  
+}
+
+#task{
+  height: 55px;
+  width: 100%;
+  background: #652034;
+  position: absolute;
+}
+
+.search{
+  height: 55px;
+  width: 330px;
+  background: #883333;
+  position: absolute;
+  right: 1075px;
+}
+
+</style>
+<script>
+document.getElementById('addtab').addEventListener("click",function(){
+  var w = document.getElementById('browser');
+  if(w.style.display == "none"){
+    w.style.display = "block";
+  }
+  else{
+    w.style.display = "none";
+  }
+})
+
+function close(){
+    document.getElementById('tc').disabled = true;
+    setTimeout(function() {
+        document.getElementById('tc').disabled = false;
+    }, 5000);
+    
+}
+
+document.getElementById('tc').addEventListener("click", close);
+
+
+function closed(){
+    document.getElementById('close').disabled = true;
+    setTimeout(function() {
+        document.getElementById('close').disabled = false;
+    }, 5000);
+    
+}
+
+document.getElementById('close').addEventListener("click", closed);
+</script>
